@@ -1,0 +1,57 @@
+windows git安装， 安装Git-2.34.1-64-bit.exe
+一 、
+
+设置Git的user name和email：
+
+$ git config --global user.name "piaoroumi"
+$ git config --global user.email "252132729@qq.com"
+
+
+二、生成SSH密钥过程：
+1.查看是否已经有了ssh密钥：cd ~/.ssh
+如果没有密钥则不会有此文件夹，有则备份删除
+2.生存密钥：
+
+$ ssh-keygen -t rsa -C “haiyan.xu.vip@gmail.com”
+按3个回车，密码为空。
+
+
+Your identification has been saved in /home/tekkub/.ssh/id_rsa.
+Your public key has been saved in /home/tekkub/.ssh/id_rsa.pub.
+The key fingerprint is:
+………………
+
+ 
+
+最后得到了两个文件：id_rsa和id_rsa.pub文件已经生成。并且生成的路径也已显示。
+
+三、进入文件夹可以看到
+
+id_rsa文件是私钥，要保存好，放在本地，私钥可以生产公钥，反之不行。
+id_rsa.pub文件是公钥，可以用于发送到其他服务器，或者git上
+用记事本之类的软件打开id_rsa.pub文件，并且复制全部内容。
+
+四、配置 ssh key
+
+进入gitlab，找到setting,再找到 SSHKeys，将复制的的内容放到 key立即可，Title随便起，
+
+点击 add key，看到如下图，则gitlab添加密钥成功：
+
+五.使用：
+
+guest1@DESKTOP-T566II5 MINGW64 /D/mylocalgitproject (master)
+$ git clone https://github.com/piaoroumi/mypublicproject
+Cloning into 'mypublicproject'...
+fatal: unable to access 'https://github.com/piaoroumi/mypublicproject/': OpenSSL SSL_read: Connection was reset, errno 10054
+
+guest1@DESKTOP-T566II5 MINGW64 /D/mylocalgitproject (master)
+$ git config --global https.sslVerify "false"
+
+guest1@DESKTOP-T566II5 MINGW64 /D/mylocalgitproject (master)
+$ git clone https://github.com/piaoroumi/mypublicproject
+Cloning into 'mypublicproject'...
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 5 (delta 0), reused 0 (delta 0), pack-reused 0
+Receiving objects: 100% (5/5), 12.78 KiB | 23.00 KiB/s, done.
