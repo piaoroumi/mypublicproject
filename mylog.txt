@@ -55,3 +55,28 @@ remote: Counting objects: 100% (5/5), done.
 remote: Compressing objects: 100% (4/4), done.
 remote: Total 5 (delta 0), reused 0 (delta 0), pack-reused 0
 Receiving objects: 100% (5/5), 12.78 KiB | 23.00 KiB/s, done.
+
+
+$ git pull origin main
+fatal: unable to access 'https://github.com/piaoroumi/mypublicproject/': Failed
+
+guest1@DESKTOP-T566II5 MINGW64 /D/mylocalgitproject/mypublicproject (main)
+$ ls
+LICENSE  README.md  mylog.txt  mynew.c  mynew2.c
+
+guest1@DESKTOP-T566II5 MINGW64 /D/mylocalgitproject/mypublicproject (main)
+$ git pull origin main
+fatal: unable to access 'https://github.com/piaoroumi/mypublicproject/': Failed
+
+guest1@DESKTOP-T566II5 MINGW64 /D/mylocalgitproject/mypublicproject (main)
+$ git pull origin main
+From https://github.com/piaoroumi/mypublicproject
+ * branch            main       -> FETCH_HEAD
+Already up to date.
+失败的很多， 要多pull几次。 push也有这种情况。
+
+java hello world
+javac -h . HelloJNI.java
+javac -h . D:\mylocalgitproject\mypublicproject\HelloJNI.java
+
+For those who are using the latest JDK, the javac -h command will compile and create a header file.
